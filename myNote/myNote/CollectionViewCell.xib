@@ -51,6 +51,10 @@
                 <constraint firstItem="QM1-6M-TeL" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="zj9-yf-EL0"/>
             </constraints>
             <size key="customSize" width="240" height="254"/>
+            <connections>
+                <outlet property="contentImg" destination="85n-cf-Y6n" id="qPH-iu-WsP"/>
+                <outlet property="titleLabel" destination="JvW-WC-wf8" id="1y3-TL-rUB"/>
+            </connections>
             <point key="canvasLocation" x="-8" y="54"/>
         </collectionViewCell>
     </objects>

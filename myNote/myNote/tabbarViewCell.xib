@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="tabbarViewCell" customModule="myNote" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="90" height="156"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="90" height="156"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_button_monor" translatesAutoresizingMaskIntoConstraints="NO" id="efY-LK-esd">
+                        <rect key="frame" x="1" y="52" width="88" height="164"/>
+                    </imageView>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="efY-LK-esd" secondAttribute="bottom" constant="-60" id="2dJ-29-TjN"/>
+                <constraint firstAttribute="trailing" secondItem="efY-LK-esd" secondAttribute="trailing" constant="1" id="VRd-IR-NTN"/>
+                <constraint firstItem="efY-LK-esd" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="1" id="c9R-xT-bJL"/>
+                <constraint firstItem="efY-LK-esd" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="52" id="wDq-YH-Zms"/>
+            </constraints>
+            <size key="customSize" width="90" height="156"/>
+            <connections>
+                <outlet property="backView" destination="efY-LK-esd" id="V3J-ZM-3Fd"/>
+            </connections>
+            <point key="canvasLocation" x="54" y="130"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="bg_button_monor" width="12" height="10"/>
+    </resources>
+</document>

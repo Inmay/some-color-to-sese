@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DB3DF2141EC189E700C44306 /* tabbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB3DF2131EC189E700C44306 /* tabbarView.swift */; };
+		DB3DF2171EC18BEE00C44306 /* tabbarViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB3DF2151EC18BEE00C44306 /* tabbarViewCell.swift */; };
+		DB3DF2181EC18BEE00C44306 /* tabbarViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DB3DF2161EC18BEE00C44306 /* tabbarViewCell.xib */; };
+		DB3DF21A1EC1A20100C44306 /* data.json in Resources */ = {isa = PBXBuildFile; fileRef = DB3DF2191EC1A20100C44306 /* data.json */; };
 		DBD6D3D51EA8C03800EE5921 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBD6D3D41EA8C03800EE5921 /* AppDelegate.swift */; };
 		DBD6D3DA1EA8C03800EE5921 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DBD6D3D81EA8C03800EE5921 /* Main.storyboard */; };
 		DBD6D3DD1EA8C03800EE5921 /* myNote.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DBD6D3DB1EA8C03800EE5921 /* myNote.xcdatamodeld */; };
@@ -18,6 +22,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DB3DF2131EC189E700C44306 /* tabbarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = tabbarView.swift; sourceTree = "<group>"; };
+		DB3DF2151EC18BEE00C44306 /* tabbarViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = tabbarViewCell.swift; sourceTree = "<group>"; };
+		DB3DF2161EC18BEE00C44306 /* tabbarViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = tabbarViewCell.xib; sourceTree = "<group>"; };
+		DB3DF2191EC1A20100C44306 /* data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = data.json; sourceTree = "<group>"; };
 		DBD6D3D11EA8C03800EE5921 /* myNote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = myNote.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DBD6D3D41EA8C03800EE5921 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DBD6D3D91EA8C03800EE5921 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -64,7 +72,11 @@
 				DBD6D3E91EA8C22600EE5921 /* CollectionViewController.swift */,
 				DBD6D3EB1EA8C24200EE5921 /* CollectionViewCell.swift */,
 				DBD6D3EC1EA8C24200EE5921 /* CollectionViewCell.xib */,
+				DB3DF2131EC189E700C44306 /* tabbarView.swift */,
+				DB3DF2151EC18BEE00C44306 /* tabbarViewCell.swift */,
+				DB3DF2161EC18BEE00C44306 /* tabbarViewCell.xib */,
 				DBD6D3D81EA8C03800EE5921 /* Main.storyboard */,
+				DB3DF2191EC1A20100C44306 /* data.json */,
 				DBD6D3DE1EA8C03800EE5921 /* Assets.xcassets */,
 				DBD6D3E01EA8C03800EE5921 /* LaunchScreen.storyboard */,
 				DBD6D3E31EA8C03800EE5921 /* Info.plist */,
@@ -134,9 +146,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				DBD6D3E21EA8C03800EE5921 /* LaunchScreen.storyboard in Resources */,
+				DB3DF21A1EC1A20100C44306 /* data.json in Resources */,
 				DBD6D3DF1EA8C03800EE5921 /* Assets.xcassets in Resources */,
 				DBD6D3EE1EA8C24200EE5921 /* CollectionViewCell.xib in Resources */,
 				DBD6D3DA1EA8C03800EE5921 /* Main.storyboard in Resources */,
+				DB3DF2181EC18BEE00C44306 /* tabbarViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -150,6 +164,8 @@
 				DBD6D3EA1EA8C22600EE5921 /* CollectionViewController.swift in Sources */,
 				DBD6D3DD1EA8C03800EE5921 /* myNote.xcdatamodeld in Sources */,
 				DBD6D3ED1EA8C24200EE5921 /* CollectionViewCell.swift in Sources */,
+				DB3DF2141EC189E700C44306 /* tabbarView.swift in Sources */,
+				DB3DF2171EC18BEE00C44306 /* tabbarViewCell.swift in Sources */,
 				DBD6D3D51EA8C03800EE5921 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -318,6 +334,7 @@
 				DBD6D3E81EA8C03800EE5921 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

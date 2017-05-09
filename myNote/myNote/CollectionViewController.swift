@@ -10,22 +10,31 @@ import UIKit
 
 private let reuseIdentifier = "Cell"
 
-class CollectionViewController: UICollectionViewController ,UICollectionViewDelegateFlowLayout{
+class CollectionViewController: UICollectionViewController ,UICollectionViewDelegateFlowLayout,tabbarDidSelectDelegate{
     
     let colors = [UIColor.black,UIColor.blue,UIColor.gray,UIColor.green,UIColor.red]
     
     let mainScreenBounds = UIScreen.main.bounds
+    
+    var tabBarView:tabbarView!
+    
+    var jsonDic = [[String:String]]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
+        let jsonPath = Bundle.main.url(forResource: "data", withExtension: "json")
+        let jsonData = try! Data.init(contentsOf: jsonPath!)
+        jsonDic = try! JSONSerialization.jsonObject(with: jsonData, options: .mutableContainers)  as! [[String:String]]
 
         // Register cell classes
         self.collectionView!.register(UINib.init(nibName: "CollectionViewCell", bundle: nil), forCellWithReuseIdentifier: reuseIdentifier)
-
-        // Do any additional setup after loading the view.
+        
+        tabBarView = tabbarView.init(frame: CGRect.init(x: 0, y:mainScreenBounds.height-tabBarConfig.cellheight, width: mainScreenBounds.width, height: tabBarConfig.cellheight ), data: jsonDic)
+        tabBarView.delegate = self
+        self.view.addSubview(tabBarView)
+        
+        //tabBarView.collectionView.selectItem(at: IndexPath.init(row: 0, section: 0), animated: true, scrollPosition: .centeredHorizontally)
     }
 
     override func didReceiveMemoryWarning() {
@@ -53,23 +62,50 @@ class CollectionViewController: UICollectionViewController ,UICollectionViewDele
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of items
-        return 5
+        return jsonDic.count
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! CollectionViewCell
         
         // Configure the cell
+        cell.titleLabel.text = jsonDic[indexPath.row]["type"]
+        cell.contentImg.image = UIImage.init(named: jsonDic[indexPath.row]["img"]!)
     
         return cell
     }
     
     public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize.init(width: mainScreenBounds.width, height: mainScreenBounds.height-160)
+        return CGSize.init(width: mainScreenBounds.width, height: mainScreenBounds.height-120)
     }
     
     public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         return UIEdgeInsets.init(top: 5, left: 0, bottom: 5, right: 0)
+    }
+    
+    
+    func tabbarDidClickAt(index:IndexPath?) {
+        self.collectionView?.selectItem(at: index, animated: true, scrollPosition: .centeredHorizontally)
+    }
+    
+    override func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        //print(scrollView.contentOffset.x)
+    }
+    
+    override func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        self.tabBarView.shouldSelectAt(index: IndexPath.init(row: Int(scrollView.contentOffset.x/mainScreenBounds.width), section: 0))
+    }
+    
+    /**
+     移动位置
+     */
+    func updateInteractiveMovementTargetPosition(targetPosition:CGPoint) {
+        
+    }
+    
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        self.tabBarView.shouldSelectAt(index: indexPath)
     }
 
     // MARK: UICollectionViewDelegate
